@@ -116,7 +116,7 @@ export const generateRayPath = (
   
   // Convert angle to radians and normalize
   const angleRadians = (90 - incidenceAngle) * (Math.PI / 180);
-  const raySlope = Math.tan(angleRadians);
+  let raySlope = Math.tan(angleRadians); // Changed from const to let since we modify it later
   
   // Add the starting point
   points.push({ x: currentX, y: currentY });

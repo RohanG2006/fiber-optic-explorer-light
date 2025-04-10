@@ -34,8 +34,8 @@ export const RayPath = ({
     // Reset animation when points change
     if (pathRef.current) {
       pathRef.current.style.animation = 'none';
-      // Force reflow
-      void pathRef.current.offsetWidth;
+      // Force reflow - use getBoundingClientRect instead of offsetWidth for SVG elements
+      void pathRef.current.getBoundingClientRect();
       pathRef.current.style.animation = '';
     }
   }, [points]);
